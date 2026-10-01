@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sir Talha Aday Serad — Aspiring Software Developer</title>
+<meta name="description" content="Portfolio of Sir Talha Aday Serad — Fresh BSIT Graduate and aspiring software developer building practical C#, Java, and front-end web projects." />
+<meta name="author" content="Sir Talha Aday Serad" />
+<meta name="theme-color" content="#0a0e14" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  (function () {
+    try {
+      if (localStorage.getItem('ts-theme') === 'light')
+        document.documentElement.setAttribute('data-theme', 'light');
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&lt;/&gt;</text></svg>" />
+</head>
+<body>
+
+<div class="bg-layer" aria-hidden="true">
+  <div class="grid-lines"></div>
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+</div>
+
+<!-- progress bar -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="brand">Portfolio</a>
+
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" data-nav>About</a>
+        <a href="#stack" data-nav>Stack</a>
+        <a href="#projects" data-nav>Projects</a>
+        <a href="#learning" data-nav>Learning</a>
+        <a href="#mindset" data-nav>Mindset</a>
+        <a href="#contact" data-nav>Contact</a>
+      </nav>
+
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+        <svg class="ico-moon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <svg class="ico-sun" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+      <p class="terminal-line">
+        <span class="tl-prompt">portfolio:~$</span>
+        <span class="tl-cmd" id="typeTarget"></span><span class="tl-caret" id="typeCaret"></span>
+      </p>
+      <p class="terminal-output" id="termOut">
+        <span class="hl">Sir Talha Aday Serad</span><br />
+        Fresh BSIT Graduate &bull; Aspiring Software Developer
+      </p>
+
+      <h1 class="hero-title hero-anim" style="--d:.05s">
+        I build things,<br />then I rebuild them <span class="accent">better</span>.
+      </h1>
+
+      <p class="hero-sub hero-anim" style="--d:.13s">
+        Fresh BSIT graduate learning software development by actually building.
+        Academic projects in C#, Java and front-end web &mdash; written, debugged,
+        and improved one iteration at a time.
+      </p>
+
+      <div class="hero-actions hero-anim" style="--d:.21s">
+        <a class="btn btn-primary" href="#projects">View Projects <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost" href="https://github.com/Dar200424" target="_blank" rel="noopener noreferrer">GitHub Profile <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="hero-meta hero-anim" style="--d:.29s">
+        <span class="chip"><span class="dot dot-live"></span>Open to entry-level roles</span>
+        <span class="chip">BSIT &middot; Class of 2026</span>
+        <span class="chip chip-clock" id="liveClock" title="Your local time">--:--:--</span>
+      </div>
+    </div>
+
+    <div class="hero-panel hero-anim" style="--d:.18s">
+      <div class="panel-bar">
+        <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+        <span class="panel-title">developer.json</span>
+      </div>
+      <pre class="code" id="codePanel"><span class="c-punc">{</span>
+  <span class="c-key">"name"</span><span class="c-punc">:</span> <span class="c-str">"Sir Talha Aday Serad"</span><span class="c-punc">,</span>
+  <span class="c-key">"role"</span><span class="c-punc">:</span> <span class="c-str">"Aspiring Software Developer"</span><span class="c-punc">,</span>
+  <span class="c-key">"education"</span><span class="c-punc">:</span> <span class="c-str">"BSIT"</span><span class="c-punc">,</span>
+  <span class="c-key">"level"</span><span class="c-punc">:</span> <span class="c-str">"Entry-Level"</span><span class="c-punc">,</span>
+  <span class="c-key">"languages"</span><span class="c-punc">:</span> <span class="c-str">"C++, C#, Java, PHP"</span><span class="c-punc">,</span>
+  <span class="c-key">"web"</span><span class="c-punc">:</span> <span class="c-str">"HTML, CSS, JavaScript"</span><span class="c-punc">,</span>
+  <span class="c-key">"tools"</span><span class="c-punc">:</span> <span class="c-str">"VS, VS Code, Git, Figma"</span><span class="c-punc">,</span>
+  <span class="c-key">"focus"</span><span class="c-punc">:</span> <span class="c-str">"Learning by building"</span><span class="c-punc">,</span>
+  <span class="c-key">"principles"</span><span class="c-punc">:</span> <span class="c-punc">[</span>
+    <span class="c-str">"Critical thinking"</span><span class="c-punc">,</span>
+    <span class="c-str">"Perseverance"</span><span class="c-punc">,</span>
+    <span class="c-str">"Continuous learning"</span>
+  <span class="c-punc">]</span>
+<span class="c-punc">}</span></pre>
+    </div>
+
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>C#</span><i>&lt;/&gt;</i><span>Java</span><i>&lt;/&gt;</i><span>HTML</span><i>&lt;/&gt;</i><span>C++</span><i>&lt;/&gt;</i><span>JavaScript</span><i>&lt;/&gt;</i><span>CSS</span><i>&lt;/&gt;</i><span>PHP</span><i>&lt;/&gt;</i><span>Git</span><i>&lt;/&gt;</i><span>Figma</span><i>&lt;/&gt;</i>
+      <span>C#</span><i>&lt;/&gt;</i><span>Java</span><i>&lt;/&gt;</i><span>HTML</span><i>&lt;/&gt;</i><span>C++</span><i>&lt;/&gt;</i><span>JavaScript</span><i>&lt;/&gt;</i><span>CSS</span><i>&lt;/&gt;</i><span>PHP</span><i>&lt;/&gt;</i><span>Git</span><i>&lt;/&gt;</i><span>Figma</span><i>&lt;/&gt;</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="sec-index">01</span>
+      <h2 class="sec-title">About Me</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm <strong>Sir Talha Aday Serad</strong>, a fresh graduate of
+          <strong>Bachelor of Science in Information Technology</strong>. My
+          programming started with academic requirements &mdash; class exercises,
+          laboratory work and group projects &mdash; and turned into something I
+          keep doing on my own time.
+        </p>
+        <p>
+          I work mostly in <strong>C#</strong> for desktop applications,
+          <strong>Java</strong> for object-oriented practice, and
+          <strong>HTML / CSS / JavaScript</strong> for anything that should live in a
+          browser. I'm currently working through <strong>C++</strong> and
+          <strong>PHP</strong> to widen that base.
+        </p>
+        <p>
+          I'm not claiming seniority or years of production experience. What I do
+          have is a habit of finishing things, documenting them honestly, and going
+          back to improve them. That's the direction I want to keep growing in:
+          toward becoming a Software Developer.
+        </p>
+
+        <div class="fact-list">
+          <div class="fact"><span class="fact-k">Focus</span><span class="fact-v">Application &amp; front-end development</span></div>
+          <div class="fact"><span class="fact-k">Project type</span><span class="fact-v">Academic + personal practice</span></div>
+          <div class="fact"><span class="fact-k">Seeking</span><span class="fact-v">Entry-level / junior developer</span></div>
+        </div>
+      </div>
+
+      <aside class="about-cards">
+        <div class="mini-card reveal">
+          <span class="mini-label">Education</span>
+          <p class="mini-value">BSIT &mdash; Information Technology</p>
+          <p class="mini-note">Academic projects in application &amp; web development</p>
+        </div>
+        <div class="mini-card reveal d1">
+          <span class="mini-label">Developer Mindset</span>
+          <ul class="mindset-list">
+            <li>Critical thinking</li>
+            <li>Helpful</li>
+            <li>Perseverance</li>
+            <li>Continuous learning</li>
+          </ul>
+        </div>
+        <div class="mini-card reveal d2">
+          <span class="mini-label">What I Can Build</span>
+          <ul class="mindset-list">
+            <li>C# Windows Forms desktop apps</li>
+            <li>Java OOP programs</li>
+            <li>Front-end web pages</li>
+            <li>UI/UX prototypes in Figma</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section class="section section-alt" id="stack">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="sec-index">02</span>
+      <h2 class="sec-title">Technologies I've Worked With</h2>
+      <span class="sec-rule"></span>
+    </div>
+    <p class="sec-note reveal">
+      Technologies from academic work and personal practice. Everything listed here is
+      beginner / entry-level &mdash; I'm building depth, not claiming mastery.
+    </p>
+
+    <div class="stack-grid">
+      <div class="stack-col reveal">
+        <h3 class="stack-h">Languages</h3>
+        <div class="badges">
+          <span class="badge b-csharp">C#</span>
+          <span class="badge b-java">Java</span>
+          <span class="badge b-cpp">C++</span>
+          <span class="badge b-php">PHP</span>
+          <span class="badge b-html">HTML</span>
+          <span class="badge b-css">CSS</span>
+          <span class="badge b-js">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="stack-col reveal d1">
+        <h3 class="stack-h">Tools &amp; Environments</h3>
+        <div class="badges">
+          <span class="badge b-vs">Visual Studio</span>
+          <span class="badge b-vscode">VS Code</span>
+          <span class="badge b-git">Git</span>
+          <span class="badge b-github">GitHub</span>
+          <span class="badge b-figma">Figma</span>
+          <span class="badge b-canva">Canva</span>
+          <span class="badge b-netbeans">NetBeans</span>
+          <span class="badge b-office">MS Office</span>
+        </div>
+      </div>
+
+      <div class="stack-col reveal d2">
+        <h3 class="stack-h">Focus Areas</h3>
+        <div class="badges">
+          <span class="badge b-plain">Desktop Apps &mdash; Windows Forms</span>
+          <span class="badge b-plain">Object-Oriented Programming</span>
+          <span class="badge b-plain">Front-End Web</span>
+          <span class="badge b-plain">UI/UX &amp; Prototyping</span>
+          <span class="badge b-plain">Git / GitHub Workflow</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="sec-index">03</span>
+      <h2 class="sec-title">Featured Projects</h2>
+      <span class="sec-rule"></span>
+    </div>
+    <p class="sec-note reveal">
+      Real academic and personal projects, separated by the technology they were
+      actually built in. Descriptions reflect what each project is known to do.
+    </p>
+
+    <div class="filters reveal" id="filters" role="tablist" aria-label="Filter projects by category">
+      <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All <span class="fcount" id="countAll">4</span></button>
+      <button class="filter" data-filter="desktop" role="tab" aria-selected="false">Desktop Apps</button>
+      <button class="filter" data-filter="java" role="tab" aria-selected="false">Java</button>
+      <button class="filter" data-filter="design" role="tab" aria-selected="false">UI/UX</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <article class="project reveal" data-cat="desktop" data-tech="C#,Windows Forms,Visual Studio">
+        <div class="project-top">
+          <span class="proj-num">01</span>
+          <span class="proj-cat">Desktop Application</span>
+        </div>
+        <h3 class="proj-title">Enrollment System</h3>
+        <p class="proj-lang">C# &middot; Windows Forms &middot; Visual Studio 2026</p>
+        <p class="proj-desc">
+          A C# Windows Forms enrollment system developed as an academic project,
+          featuring interfaces and workflows for administrative, student and
+          faculty-related functions &mdash; login and sign-up, administration,
+          student and faculty management, profiles, attendance and grade entry.
+        </p>
+        <div class="proj-skills">
+          <span class="skill">C# Application Development</span>
+          <span class="skill">Windows Forms UI</span>
+          <span class="skill">Event-driven Logic</span>
+          <span class="skill">Academic Project</span>
+        </div>
+        <div class="badges">
+          <span class="badge b-csharp">C#</span>
+          <span class="badge b-vs">Visual Studio 2026</span>
+        </div>
+        <div class="proj-links">
+          <span class="link-pending">[ ADD REPOSITORY ]</span>
+          <span class="link-pending">[ ADD SCREENSHOTS ]</span>
+        </div>
+      </article>
+
+      <article class="project reveal d1" data-cat="java" data-tech="Java,OOP,NetBeans">
+        <div class="project-top">
+          <span class="proj-num">02</span>
+          <span class="proj-cat">Java / OOP</span>
+        </div>
+        <h3 class="proj-title">BuildHub</h3>
+        <p class="proj-lang">Java &middot; Object-Oriented Programming &middot; Academic</p>
+        <p class="proj-desc">
+          A Java academic project focused on applying object-oriented principles to a
+          practical problem. Documentation and certificates for the project are
+          available through the linked reference.
+        </p>
+        <div class="proj-skills">
+          <span class="skill">Java Fundamentals</span>
+          <span class="skill">OOP Design</span>
+          <span class="skill">Beginner / Academic</span>
+        </div>
+        <div class="badges">
+          <span class="badge b-java">Java</span>
+          <span class="badge b-netbeans">NetBeans</span>
+        </div>
+        <div class="proj-verify">
+          <span class="verify-tag">NEEDS VERIFICATION</span>
+          OOP concepts confirmed against the actual Java source before listing.
+        </div>
+        <div class="proj-links">
+          <a class="link" href="https://www.facebook.com/share/v/1bcAre6dq7/" target="_blank" rel="noopener noreferrer">View Documentation &rarr;</a>
+          <span class="link-pending">[ ADD REPOSITORY ]</span>
+        </div>
+      </article>
+
+      <article class="project reveal d1" data-cat="design" data-tech="Figma,UI/UX,Prototype">
+        <div class="project-top">
+          <span class="proj-num">03</span>
+          <span class="proj-cat">UI/UX Design</span>
+        </div>
+        <h3 class="proj-title">Burger Shope</h3>
+        <p class="proj-lang">Figma &middot; Mobile Application Prototype</p>
+        <p class="proj-desc">
+          A mobile burger shop application concept and prototype, built around an
+          ordering and delivery flow. Focuses on mobile interaction, user controls,
+          delivery interaction and overall mobile UI/UX. This is a design prototype,
+          not a released application.
+        </p>
+        <div class="proj-skills">
+          <span class="skill">Mobile Interface Design</span>
+          <span class="skill">Prototyping</span>
+          <span class="skill">User Interaction Design</span>
+          <span class="skill">Product Concept</span>
+        </div>
+        <div class="badges">
+          <span class="badge b-figma">Figma</span>
+        </div>
+        <div class="proj-links">
+          <a class="link" href="https://www.figma.com/design/xhkCxEpu5nSQWSDOH6XD37/Untitled?m=auto&amp;t=CRGHAEnz6q1LTTqI-6" target="_blank" rel="noopener noreferrer">View Figma Prototype &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project reveal" data-cat="java" data-tech="Java">
+        <div class="project-top">
+          <span class="proj-num">04</span>
+          <span class="proj-cat">Java Programming</span>
+        </div>
+        <h3 class="proj-title">Mischief Shope</h3>
+        <p class="proj-lang">Java &middot; Programming Project</p>
+        <p class="proj-desc">
+          A Java programming project. Feature-level detail is pending verification
+          against the actual Java source files &mdash; this description will be
+          completed once the code is available rather than guessed.
+        </p>
+        <a class="proj-shot" href="assets/mischief-shope.png" target="_blank" rel="noopener noreferrer">
+          <img src="assets/mischief-shope.png" alt="Mischief Shope project screenshot" loading="lazy" />
+          <span class="shot-hint">View screenshot</span>
+        </a>
+        <div class="badges">
+          <span class="badge b-java">Java</span>
+        </div>
+        <div class="proj-verify">
+          <span class="verify-tag">NEEDS VERIFICATION</span>
+          Features pending review of the actual Java source code.
+        </div>
+        <div class="proj-links">
+          <span class="link-pending">[ ADD REPOSITORY ]</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="empty-note reveal" id="emptyNote" hidden>No projects in this category yet.</p>
+
+    <div class="projects-foot reveal">
+      <p>
+        Screenshots, live demos and repository links are added as the materials are
+        finalised. Nothing here is linked until it actually exists.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEARNING ============ -->
+<section class="section section-alt" id="learning">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="sec-index">04</span>
+      <h2 class="sec-title">Currently Learning</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <div class="learn-grid">
+      <div class="learn-item reveal">
+        <span class="learn-mark">&lt;/&gt;</span>
+        <h4>Programming Fundamentals</h4>
+        <p>Strengthening the basics: control flow, functions, arrays and problem solving before adding complexity.</p>
+      </div>
+      <div class="learn-item reveal d1">
+        <span class="learn-mark">C#</span>
+        <h4>C# &amp; Application Development</h4>
+        <p>Going deeper into Windows Forms, event-driven design and structuring larger applications cleanly.</p>
+      </div>
+      <div class="learn-item reveal d2">
+        <span class="learn-mark">Java</span>
+        <h4>Java &amp; OOP</h4>
+        <p>Applying classes, encapsulation, inheritance and abstraction to projects rather than isolated exercises.</p>
+      </div>
+      <div class="learn-item reveal">
+        <span class="learn-mark">C++</span>
+        <h4>C++</h4>
+        <p>Memory, pointers and more structured program design to round out my language fundamentals.</p>
+      </div>
+      <div class="learn-item reveal d1">
+        <span class="learn-mark">JS</span>
+        <h4>Web Development</h4>
+        <p>Responsive front-end practice and DOM handling, applied in personal projects.</p>
+      </div>
+      <div class="learn-item reveal d2">
+        <span class="learn-mark">git</span>
+        <h4>Git / GitHub Workflow</h4>
+        <p>Branching, clean commit history and documentation that makes a repository easy to review.</p>
+      </div>
+      <div class="learn-item reveal">
+        <span class="learn-mark">{ }</span>
+        <h4>Developer Concepts</h4>
+        <p>Reading requirements, breaking problems down and writing maintainable code others can follow.</p>
+      </div>
+      <div class="learn-item reveal d1">
+        <span class="learn-mark">doc</span>
+        <h4>Project Documentation</h4>
+        <p>Writing honest READMEs: what the project does, how to run it and what I actually learned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MINDSET ============ -->
+<section class="section" id="mindset">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="sec-index">05</span>
+      <h2 class="sec-title">Developer Mindset</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <div class="mindset-wrap reveal">
+      <p class="mindset-lead">
+        I see software development as a loop, not a line. You learn something, build
+        with it, get it wrong, figure out why, and try again &mdash; and that cycle is
+        the actual work.
+      </p>
+      <div class="loop" id="loop">
+        <button class="loop-step" data-step="0">Learn</button>
+        <span class="loop-arrow">&rarr;</span>
+        <button class="loop-step" data-step="1">Build</button>
+        <span class="loop-arrow">&rarr;</span>
+        <button class="loop-step" data-step="2">Break</button>
+        <span class="loop-arrow">&rarr;</span>
+        <button class="loop-step" data-step="3">Fix</button>
+        <span class="loop-arrow">&rarr;</span>
+        <button class="loop-step" data-step="4">Improve</button>
+      </div>
+      <p class="mindset-note" id="mindsetNote">
+        Perseverance matters more than being fast. Most of what I know about programming,
+        I know because something didn't work and I stayed with it until it did.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="sec-index">06</span>
+      <h2 class="sec-title">Contact &amp; Links</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card reveal" role="group">
+        <span class="cc-label">GitHub</span>
+        <span class="cc-value">github.com/Dar200424</span>
+        <span class="card-actions">
+          <a class="link-sm" href="https://github.com/Dar200424" target="_blank" rel="noopener noreferrer">Open &rarr;</a>
+          <button class="copy-btn" data-copy="https://github.com/Dar200424">Copy link</button>
+        </span>
+      </div>
+
+      <div class="contact-card reveal d1" role="group">
+        <span class="cc-label">Email</span>
+        <span class="cc-value">talha_serad@sjp2cd.edu.ph</span>
+        <span class="card-actions">
+          <a class="link-sm" href="mailto:talha_serad@sjp2cd.edu.ph">Send mail &rarr;</a>
+          <button class="copy-btn" data-copy="talha_serad@sjp2cd.edu.ph">Copy address</button>
+        </span>
+      </div>
+
+      <div class="contact-card reveal d2" role="group">
+        <span class="cc-label">Phone</span>
+        <span class="cc-value">0993 371 4406</span>
+        <span class="card-actions">
+          <a class="link-sm" href="tel:+639933714406">Call &rarr;</a>
+          <button class="copy-btn" data-copy="09933714406">Copy number</button>
+        </span>
+      </div>
+
+      <div class="contact-card reveal d3" role="group">
+        <span class="cc-label">Figma</span>
+        <span class="cc-value">Burger Shope Prototype</span>
+        <span class="card-actions">
+          <a class="link-sm" href="https://www.figma.com/design/xhkCxEpu5nSQWSDOH6XD37/Untitled?m=auto&amp;t=CRGHAEnz6q1LTTqI-6" target="_blank" rel="noopener noreferrer">Open prototype &rarr;</a>
+          <button class="copy-btn" data-copy="https://www.figma.com/design/xhkCxEpu5nSQWSDOH6XD37/Untitled?m=auto&amp;t=CRGHAEnz6q1LTTqI-6">Copy link</button>
+        </span>
+      </div>
+
+      <div class="contact-card reveal d3" role="group">
+        <span class="cc-label">BuildHub</span>
+        <span class="cc-value">Project Documentation</span>
+        <span class="card-actions">
+          <a class="link-sm" href="https://www.facebook.com/share/v/1bcAre6dq7/" target="_blank" rel="noopener noreferrer">Open docs &rarr;</a>
+          <button class="copy-btn" data-copy="https://www.facebook.com/share/v/1bcAre6dq7/">Copy link</button>
+        </span>
+      </div>
+
+      <div class="contact-card reveal" role="group">
+        <span class="cc-label">Repository</span>
+        <span class="cc-value">TalhaSerad</span>
+        <span class="card-actions">
+          <a class="link-sm" href="https://github.com/Dar200424/TalhaSerad" target="_blank" rel="noopener noreferrer">Open repo &rarr;</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="pending-links reveal">
+      <span class="pending-title">Coming soon:</span>
+      <span class="link-pending">[ ADD PORTFOLIO URL ]</span>
+      <span class="link-pending">[ ADD LINKEDIN ]</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">
+      <span class="brand-prompt">&gt;</span> Built with HTML, CSS &amp; JavaScript &mdash; designed and written by
+      Sir Talha Aday Serad
+    </p>
+    <p class="footer-note">Fresh BSIT Graduate &bull; Aspiring Software Developer</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top" title="Back to top">&uarr;</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
